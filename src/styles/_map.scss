@@ -1,0 +1,227 @@
+$color1: #00bcd4; // blue
+$color2: #ff9800; // orange
+$color3: #f44336; // red
+$color4: #4caf50; // green
+$color5: #9c27b0; // purple
+
+
+
+
+.map-legend {
+  margin: 0 0 20px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  // justify-content: flex-start;
+}
+
+.map-legend-item {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 14.28%;
+  justify-content: space-between;
+
+  .map-legend-button {
+    text-transform: uppercase;
+    display: block;
+    text-align: center;
+    line-height: 3em;
+    border: 1px solid #777;
+    border-radius: 300px;
+    font-size: 11px;
+    @include transition-all;
+    opacity: .5;
+
+    @include desktop {
+      font-size: 14px;
+    }
+
+    &:hover {
+      cursor: pointer;
+      opacity: 1;
+    }
+  }
+
+  .showall {
+    background: transparent;
+  }
+
+  .monday {
+    background: transparent;
+    border-color: $color1;
+    color: $color1;
+  }
+
+  .tuesday {
+    background: transparent;
+    border-color: $color2;
+    color: $color2;
+  }
+
+  .wednesday {
+    background: transparent;
+    border-color: $color3;
+    color: $color3;
+  }
+
+  .thursday {
+    background: transparent;
+    border-color: $color4;
+    color: $color4;
+  }
+
+  .friday {
+    background: transparent;
+    border-color: $color5;
+    color: $color5;
+  }
+
+  &.map-region-selected {
+
+    .showall {
+      opacity: 1;
+      color: #fff;
+      background: #555;
+    }
+
+    .monday {
+      opacity: 1;
+      color: #fff;
+      background: $color1;
+    }
+
+    .tuesday {
+      opacity: 1;
+      color: #fff;
+      background: $color2;
+    }
+
+    .wednesday {
+      opacity: 1;
+      color: #fff;
+      background: $color3;
+    }
+
+    .thursday {
+      opacity: 1;
+      color: #fff;
+      background: $color4;
+    }
+
+    .friday {
+      opacity: 1;
+      color: #fff;
+      background: $color5;
+    }
+  }
+}
+
+
+
+
+
+// text that appears next to map and changes day to day
+.all-days-description,
+.map-region-description {
+  display: none;
+  
+  &.map-region-selected {
+    display: block;
+  }
+}
+
+
+
+
+
+// map heirarchy
+// 6 .target (invisible click area above map)
+// 5 #mapText
+// 4 .map-region
+// 3 .highways
+// 2 .town-roads
+// 2 .airport
+// 1 .kenduskeag
+
+
+
+.town-roads{
+  fill: #adadad;
+}
+
+.airport{
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  fill: #E1E1E1;
+}
+
+
+.kenduskeag{
+  fill: #7AB6F5;
+}
+
+.highways{
+  fill: #999;
+}
+
+#mapText {
+  path {
+    fill:#000;
+    stroke: transparent;
+    stroke-width: 0;
+  }
+}
+
+.target {
+  fill: transparent;
+  stroke: transparent;
+  stroke-width: 1;
+
+  &:hover {
+    cursor: pointer;
+    stroke: #efefef;
+  }
+}
+
+.map-region {
+  pointer-events: none;
+  fill: #ddd;
+  stroke: transparent;
+  stroke-width: 0;
+
+  .map-region-selected & {
+    &.monday {
+      fill: $color1;
+    }
+
+    &.tuesday {
+      fill: $color2;
+    }
+
+    &.wednesday {
+      fill: $color3;
+    }
+
+    &.thursday {
+      fill: $color4;
+    }
+
+    &.friday {
+      fill: $color5;
+    }
+  }
+}
+
+svg {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.map-container,
+.map-description {
+  // border: 1px solid red;
+  background: #fff;
+}
+

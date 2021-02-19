@@ -1,0 +1,14 @@
+// Styling for the call to action section
+section.connect {
+    position: relative;
+    // padding: 120px 0;
+    background-image: url('../img/bg-paulbunyan.jpg');
+    background-position: center;
+    @include background-cover;
+    color: #fff;
+}
+
+.contact-form {
+    border-top: 1px solid #555;
+    padding-top: 20px;
+}

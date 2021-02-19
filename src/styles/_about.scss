@@ -1,0 +1,61 @@
+// Styling for the download section
+section.about {
+    position: relative;
+
+    img {
+        display: block;
+        width: 100%;
+        max-width: 450px;
+        margin: 40px 0 0;
+
+        @include laptop {
+            margin: 0;
+        }
+    }
+}
+
+
+// Styling for recycle section
+section.recyclable {
+    position: relative;
+    background-color: $bg-light;
+    @include innerShadow;
+}
+
+.official-links {
+    // margin-top: 40px;
+
+    a {
+        font-size: 18px;
+
+        & + a {
+
+            margin-top: 10px;
+
+        }
+    }
+}
+
+// recycle list
+.featureList, 
+.featureList ul {
+    margin-top: 0;
+    padding-left: 1.5em;
+    list-style-type: none;
+
+    li:before {
+        position: absolute;
+        margin-left: -1.3em;
+        font-weight: bold;
+    }
+
+    li.tick:before {
+        content: "\2713";
+        color: darkgreen;
+    }
+
+    li.cross:before {
+        content: "\2717";
+        color: crimson;
+    }
+}

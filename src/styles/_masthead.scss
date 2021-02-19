@@ -1,0 +1,60 @@
+// Styling for the masthead
+header.masthead {
+    position: relative;
+    width: 100%;
+    min-height: 520px;
+    height: 100vh;
+    color: white;
+    // background: url('../img/bg-pattern.png'), $theme-secondary;
+    // background: url('../img/bg-pattern.png'), linear-gradient(to left, $theme-secondary, $theme-tertiary);
+    background: linear-gradient(to left, $theme-secondary, $theme-tertiary);
+    
+    @include tablet {
+        height: 70vh;
+    }
+
+    .header-content {
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%); // vertically center hero text
+        z-index: 1;
+        width:100%;
+        max-width: 800px;
+        margin-bottom: 0;
+        text-align: center;
+        padding: 0 15px;
+
+        @include tablet {
+            padding: 0 30px;
+        }
+
+        h1 {
+            font-size: 36px;
+
+            @include tablet {
+                font-size: 48px;
+            }
+
+            @include laptop {
+                font-size: 60px;
+            }
+        }
+
+        p {
+            @include laptop {
+                font-size: 22px;
+            }
+        }
+
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}

@@ -1,0 +1,38 @@
+// Styling for the footer
+footer {
+    padding: 25px 0;
+    text-align: center;
+    color: $gray-light;
+    background-color: $gray-darker;
+
+    p {
+        font-size: 14px;
+        margin: 0 0 10px;
+
+        @include tablet {
+            margin: 0;
+        }
+    }
+
+    span {
+        font-size: 14px;
+        margin: 0;
+        display: inline-block;
+
+        &  + span {
+            margin-left: 10px;
+        }
+    }
+
+    @include tablet {
+        .copyright {
+            text-align: left;
+        }
+        .back-to-top {
+            text-align: right;
+        }
+    }
+}
+
+
+

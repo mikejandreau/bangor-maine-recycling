@@ -1,0 +1,118 @@
+// Mixins
+@mixin transition-all() {
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+}
+
+@mixin background-cover() {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+@mixin button-variant($color, $background, $border) {
+    color: $color;
+    border-color: $border;
+    background-color: $background;
+    &:focus,
+    &.focus {
+        color: $color;
+        border-color: darken($border, 25%);
+        background-color: darken($background, 10%);
+    }
+    &:hover {
+        color: $color;
+        border-color: darken($border, 12%);
+        background-color: darken($background, 10%);
+    }
+    &:active,
+    &.active,
+    .open > &.dropdown-toggle {
+        color: $color;
+        border-color: darken($border, 12%);
+        background-color: darken($background, 10%);
+        &:hover,
+        &:focus,
+        &.focus {
+            color: $color;
+            border-color: darken($border, 25%);
+            background-color: darken($background, 17%);
+        }
+    }
+    &:active,
+    &.active,
+    .open > &.dropdown-toggle {
+        background-image: none;
+    }
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        &:hover,
+        &:focus,
+        &.focus {
+            border-color: $border;
+            background-color: $background;
+        }
+    }
+    .badge {
+        color: $background;
+        background-color: $color;
+    }
+}
+
+
+@mixin heading-font {
+    font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
+}
+
+@mixin body-font {
+    font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
+}
+
+@mixin alt-font {
+    font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+
+
+// Inset/drop shadow color and size
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+$shadow-inset: rgba(0,0,0,0.2);
+$shadow-outer: rgba(0,0,0,0.1);
+$shadow-size: 10px;
+
+
+
+// Top and bottom inset box shadow
+// @include innerShadow;
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+@mixin innerShadow() {
+    box-shadow: inset 0 $shadow-size $shadow-size (-$shadow-size) $shadow-inset, inset 0 (-$shadow-size) $shadow-size (-$shadow-size) $shadow-inset;
+}
+
+// Outer box shadow
+// @include dropShadow;
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+@mixin dropShadow() {
+    box-shadow: 0 0 $shadow-size 0 $shadow-outer, 0 0 $shadow-size 0 $shadow-outer;
+}
+
+// Media queries
+// @include mobile { selector: style; }
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+@mixin mobile   { @media (min-width: #{$width_mobile})  { @content; } }
+@mixin phablet  { @media (min-width: #{$width_phablet}) { @content; } }
+@mixin tablet   { @media (min-width: #{$width_tablet})  { @content; } }
+@mixin laptop   { @media (min-width: #{$width_laptop})  { @content; } }
+@mixin desktop  { @media (min-width: #{$width_desktop}) { @content; } }
+@mixin hdtv     { @media (min-width: #{$width_hdtv})    { @content; } }
+@mixin nolaptop { @media (max-width: #{$hidden_laptop}) { @content; } }
+@mixin notablet { @media (max-width: #{$hidden_tablet}) { @content; } }
+
+
+

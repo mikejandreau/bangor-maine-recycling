@@ -1,0 +1,94 @@
+
+// Styling for the download section
+section.share {
+    text-align: center;
+    background-color: $bg-light;
+    @include innerShadow;
+}
+
+
+
+.share-button {
+  box-shadow: none;
+  margin: 10px 4px;
+
+  @include tablet {
+    margin: 10px;
+  }
+
+  // bootstrap override
+  &.btn-send,
+  &.btn-primary {
+    margin: 0 0 10px;
+
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+
+  // social sharing buttons 
+  &[class*="social-"] {
+    color: $color_white;
+    background-color: $color_share_base;
+    border: none;
+
+    &:hover {
+      color: $color_white;
+      background-color: darken($color_share_base, 10%);
+    }
+
+    &:active,
+    &:focus {
+      color: $color_white;
+      background-color: darken($color_share_base, 20%);
+    }
+  }
+
+  &[class*="-facebook"] {
+    background-color: $color_facebook;
+
+    &:hover {
+      background-color: darken($color_facebook, 10%);
+    }
+  }
+
+  &[class*="-twitter"] {
+    background-color: $color_twitter;
+
+    &:hover {
+      background-color: darken($color_twitter, 10%);
+    }
+  }
+
+  &[class*="-linkedin"] {
+    background-color: $color_linkedin;
+
+    &:hover {
+      background-color: darken($color_linkedin, 10%);
+    }
+  }
+
+  &[class*="-github"] {
+    background-color: $color_github;
+
+    &:hover {
+      background-color: darken($color_github, 10%);
+    }
+  }
+
+  &[class*="-soundcloud"] {
+    background-color: $color_soundcloud;
+
+    &:hover {
+      background-color: darken($color_soundcloud, 10%);
+    }
+  }
+
+  &[class*="-rss"] {
+    background-color: $color_rss;
+
+    &:hover {
+      background-color: darken($color_rss, 10%);
+    }
+  }
+}
