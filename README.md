@@ -1,6 +1,8 @@
 ## Bangor Maine Recycling
 
-This is what happens when developers get bored.
+This is what happens when developers get bored. 
+
+[View site on Netlify](https://bangormainerecycling.com/)
 
 ## Usage
 
