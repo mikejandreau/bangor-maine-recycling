@@ -1,10 +1,6 @@
 ## Bangor Maine Recycling
 
-To begin using this template, choose one of the following options to get started:
-* [Download the latest release on Start Bootstrap](https://startbootstrap.com/template-overviews/new-age/)
-* Install via npm: `npm i startbootstrap-new-age`
-* Clone the repo: `git clone https://github.com/BlackrockDigital/startbootstrap-new-age.git`
-* [Fork, Clone, or Download on GitHub](https://github.com/BlackrockDigital/startbootstrap-new-age)
+This is what happens when developers get bored.
 
 ## Usage
 
